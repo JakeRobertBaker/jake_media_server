@@ -1,0 +1,12 @@
+services:
+  nordlynx:
+    image: ghcr.io/bubuntux/nordlynx
+    cap_add:
+      - NET_ADMIN #required
+    environment:
+      - PRIVATE_KEY_FILE=/run/secrets/privatekey
+    secrets:
+      - privatekey 
+secrets:
+  privatekey:
+    file: /home/jake/book_club/freidman.txt
